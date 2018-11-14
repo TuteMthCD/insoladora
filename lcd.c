@@ -1,5 +1,5 @@
 #include "lcd.h"
-
+#include "Tecnica1.h"
 
 /* esta librería solo puede utilizar las cuatro líneas menos significativas de 
  * un puerto en caso de querer utilizar otras líneas se debe de reprogramar
@@ -78,6 +78,7 @@ void funtLCD(void) {
                     char2LCD(0x00);
                 }
                 var3LCD(varPWM, 0x4A);
+                PWM_porcent(varPWM);
                 char2LCD('%');
                 break;
 
@@ -86,9 +87,11 @@ void funtLCD(void) {
                 if (boolASP == bTRUE) {
                     set_CURSOR(0x4E);
                     msg2LCD("On");
+                    aspiradora(TRUE);
                 } else {
                     set_CURSOR(0x4D);
                     msg2LCD("Off");
+                    aspiradora(FALSE);
                 }
                 break;
 
@@ -97,9 +100,11 @@ void funtLCD(void) {
                 if (boolLUCES == bTRUE) {
                     set_CURSOR(0x4E);
                     msg2LCD("On");
+                    luces(TRUE);
                 } else {
                     set_CURSOR(0x4D);
                     msg2LCD("Off");
+                    luces(FALSE);
                 }
                 break;
         }
