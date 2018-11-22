@@ -33,6 +33,7 @@ void funtLCD(void);
 void var3LCD(int, unsigned char);
 void Crear_Caracter(unsigned char[], unsigned char);
 
+
 void LCD_init(void); // Inicializa el LCD, requiere timer (interrupción)
 void msg2LCD(const unsigned char*); // Envía un mensaje para mostrar en LCD
 

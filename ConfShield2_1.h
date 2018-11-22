@@ -8,7 +8,6 @@
 #include "lcd.h"
 
 #ifndef CONFSHIELD2_1_H
-#define	CONFSHIELD2_1_H
 
 
 

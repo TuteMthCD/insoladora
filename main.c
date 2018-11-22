@@ -49,7 +49,6 @@ void __interrupt myISR(void) {
 
         tic_LCD();
         tic_encoder();
-
     }
     encoderInterrup();
 }
