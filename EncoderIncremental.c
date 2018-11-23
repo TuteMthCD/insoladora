@@ -1,8 +1,6 @@
 
 #include "EncoderIncremental.h"
-#include "lcd.h"
-#include "teclado.h"
-#include "Tecnica1.h"
+#include "menu.h"
 
 #define encoderToutSet  20
 #define Flag_ON 10
@@ -188,26 +186,32 @@ void funtEncoder(void) {
 
 void funtMENUSW(void) {
     switch (MENU) {
+        case TIME:
+
+            if (boolTIME)boolTIME = bFALSE;
+            else boolTIME = bTRUE;
+
+            break;
         case PWM:
-            if (boolPWM) {
-                boolPWM = bFALSE;
-            } else boolPWM = bTRUE;
-            LCD = ESCRIBIR;
+
+            if (boolPWM) boolPWM = bFALSE;
+            else boolPWM = bTRUE;
+
             break;
         case ASPIRADORA:
-            if (boolASP) {
-                boolASP = bFALSE;
-            } else boolASP = bTRUE;
-            LCD = ESCRIBIR;
+
+            if (boolASP) boolASP = bFALSE;
+            else boolASP = bTRUE;
+
             break;
         case LUCES:
-            if (boolLUCES) {
-                boolLUCES = bFALSE;
-            } else boolLUCES = bTRUE;
-            LCD = ESCRIBIR;
+
+            if (boolLUCES) boolLUCES = bFALSE;
+            else boolLUCES = bTRUE;
+
             break;
         default:
             MENU = PWM;
-            LCD = ESCRIBIR;
     }
+    LCD = ESCRIBIR;
 }

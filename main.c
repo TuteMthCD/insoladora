@@ -13,6 +13,7 @@
 #include "Tecnica1.h"       //segun el shield habilita distintas librerias
 #include "ConfShield2_1.h"
 #include "EncoderIncremental.h"
+#include "menu.h"
 
 /*variables globales ********************************************************/
 
@@ -37,7 +38,7 @@ void main(void) {
 
     while (1) {
         funtEncoder();
-        funtLCD();
+        FuntMenu();
     }
 }
 

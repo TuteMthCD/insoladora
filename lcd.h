@@ -12,26 +12,8 @@
 #define E_BUS_DIR   TRISEbits.RE0
 
 #define DISPLAY         LATD	// Es para denominar al puerto donde está
+
 #define flecha 0x00
-
-enum {
-    INICIO, PWM, ASPIRADORA, LUCES
-} MENU = INICIO;
-
-enum {
-    ESPERAR, ESCRIBIR
-} LCD = ESCRIBIR;
-
-typedef enum {
-    bFALSE, bTRUE
-} bool_t;
-
-bool_t boolASP = bFALSE, boolLUCES = bFALSE, boolPWM = bFALSE;
-
-
-void funtLCD(void);
-void var3LCD(int, unsigned char);
-void Crear_Caracter(unsigned char[], unsigned char);
 
 
 void LCD_init(void); // Inicializa el LCD, requiere timer (interrupción)
@@ -47,8 +29,5 @@ void ret_HOME(void); // Ubica el cursor en la primera posición
 void set_CURSOR(unsigned char); // Ubica el cursor en una posición determinada
 void tic_LCD(void); // Esta rutina se llama desde la interrupción de timer de 1mS
 void DesplazarIzquierda(void);
-
-
-int varPWM = 0;
 
 #endif /* LCD_H */

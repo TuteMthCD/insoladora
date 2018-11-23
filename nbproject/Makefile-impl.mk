@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=insoladora-master
+PROJECTNAME=insoladora
 
 # Active Configuration
 DEFAULTCONF=default
