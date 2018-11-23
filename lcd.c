@@ -25,6 +25,11 @@ void read_BUSY(void); // Verifica si terminó la operación en proceso
 // Funciones mias :D
 void Crear_Caracter(unsigned char[], unsigned char);
 
+void view_Cursor(unsigned char estado) {
+    if (estado == ON) write_CMD(0x0E);
+    else write_CMD(0x0C);
+}
+
 void Crear_Caracter(unsigned char linea[], unsigned char direccion) {
     write_CMD(direccion); // linea 8 es la direccion en la CGRAM
     read_BUSY();
@@ -99,7 +104,7 @@ void LCD_init(void) {
     LCD_tout = 1;
     while (LCD_tout);
 
-    write_CMD(0x0C); //disp ON Cursor OFF Blink OFF
+    write_CMD(0x0C); //disp ON Cursor OFF Blink OFF     0x0C DEFAULT
     LCD_tout = 1;
     while (LCD_tout);
 

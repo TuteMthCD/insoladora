@@ -17,6 +17,8 @@ unsigned char Flag_RB0, Flag_RB1;
 
 //variables de uso esclusivo de zla libreria
 unsigned char encoderTout = 0;
+extern char auxCursorTIMER;
+
 
 //Funciones para el uso exclusivo de la libreria
 void funtMENUSW(void);
@@ -124,9 +126,20 @@ void funtEncoder(void) {
                 LCD = ESCRIBIR;
 
                 if (boolPWM == bTRUE) {
-                    if (varPWM > 0) {
-                        varPWM -= 5;
+
+                    if (varPWM > 0) varPWM -= 5;
+
+                } else if (boolTIME == bTRUE) {
+
+                    switch (auxCursorTIMER) {
+                        case 0:
+                            if (varTIME)varTIME -= 600;
+                            break;
+                        case 1:
+                            if (varTIME)varTIME -= 60;
+                            break;
                     }
+
                 } else if (MENU)MENU--;
 
                 break;
@@ -136,9 +149,20 @@ void funtEncoder(void) {
                 LCD = ESCRIBIR;
 
                 if (boolPWM == bTRUE) {
-                    if (varPWM < 100) {
-                        varPWM += 5;
+
+                    if (varPWM < 100) varPWM += 5;
+
+                } else if (boolTIME == bTRUE) {
+
+                    switch (auxCursorTIMER) {
+                        case 0:
+                            if (varTIME < 3599)varTIME += 600;
+                            break;
+                        case 1:
+                            if (varTIME < 3599)varTIME += 60;
+                            break;
                     }
+
                 } else if (MENU < 3)MENU++;
 
                 break;
@@ -188,7 +212,7 @@ void funtMENUSW(void) {
     switch (MENU) {
         case TIME:
 
-            if (boolTIME)boolTIME = bFALSE;
+            if (boolTIME)auxCursorTIMER++;
             else boolTIME = bTRUE;
 
             break;

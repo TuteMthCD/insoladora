@@ -53,6 +53,7 @@
         <archiverTool>
         </archiverTool>
         <loading>
+          <loadableFile>bootloader.hex</loadableFile>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>

@@ -19,6 +19,8 @@
 void LCD_init(void); // Inicializa el LCD, requiere timer (interrupción)
 void msg2LCD(const unsigned char*); // Envía un mensaje para mostrar en LCD
 
+void view_Cursor(unsigned char);
+
 /**
  * Envia dato como unico caracter ASCII al LCD
  * @param dato caracter a enviar como ASCII HEXA o INT

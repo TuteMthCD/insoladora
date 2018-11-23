@@ -20,3 +20,4 @@ bool_t boolASP = bFALSE, boolLUCES = bFALSE, boolPWM = bFALSE, boolTIME = bFALSE
 //variables globales
 
 int varPWM = 0;
+int varTIME = 0;

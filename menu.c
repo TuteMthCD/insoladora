@@ -11,9 +11,12 @@
 // Funciones para el uso de la libreria
 void horaLCD(int, unsigned char);
 void var4ToLCD(int, unsigned char);
-
+void funtTIMER(void);
 
 //funcion para llamar desde el while
+
+char auxCursorTIMER = 0;
+
 void FuntMenu(void) {
     //------------------------------LCD-----------------------------------------
     if (LCD == ESCRIBIR) {
@@ -21,7 +24,7 @@ void FuntMenu(void) {
         switch (MENU) {
             case TIME:
                 msg2LCD("   INSOLADORA");
-                horaLCD(1830, 0x46); //probando
+                funtTIMER();
                 break;
 
             case PWM:
@@ -95,15 +98,61 @@ void horaLCD(int dato, char cursor) {
     unsigned char minutos = dato / 60;
     unsigned char segundos = dato % 60;
 
-    unsigned char mensaje[5];
+    unsigned char mensaje[6];
 
-    mensaje[0] = ((segundos / 10) % 10) + 48; //separo primera cifra de segundos
-    mensaje[1] = (segundos % 10) + 48; //separo segunda cifra de segundos
+    mensaje[0] = ((minutos / 10) % 10) + 48; //separo primera cifra de minutos
+    mensaje[1] = (minutos % 10) + 48; //separo segunda cifra de minutos
     mensaje[2] = 58; // ASCII 58 es ":" 
-    mensaje[3] = ((minutos / 10) % 10) + 48; //separo primera cifra de minutos
-    mensaje[4] = (minutos % 10) + 48; //separo primera cifra de minutos
+    mensaje[3] = ((segundos / 10) % 10) + 48; //separo primera cifra de segundos
+    mensaje[4] = (segundos % 10) + 48; //separo segunda cifra de segundos
+    mensaje[5] = '\0';
 
     set_CURSOR(cursor);
 
     msg2LCD(&mensaje);
+}
+
+void funtTIMER(void) {
+
+    horaLCD(varTIME, 0x46); //probando
+
+    if (boolTIME == bTRUE) {
+
+        switch (auxCursorTIMER) {
+            case 0:
+                set_CURSOR(0x40);
+                char2LCD(0x00);
+                
+                set_CURSOR(0x46);
+                view_Cursor(ON);
+                break;
+            case 1:
+                set_CURSOR(0x40);
+                char2LCD(0x00);
+                
+                set_CURSOR(0x47);
+                view_Cursor(ON);
+                break;
+            case 2:
+                set_CURSOR(0x40);
+                char2LCD(0x00);
+                
+                set_CURSOR(0x49);
+                view_Cursor(ON);
+                break;
+            case 3:
+                set_CURSOR(0x40);
+                char2LCD(0x00);
+                
+                set_CURSOR(0x4A);
+                view_Cursor(ON);
+                break;
+            default:
+                auxCursorTIMER = 0;
+                boolTIME = bFALSE;
+                view_Cursor(OFF);
+        }
+
+    }
+
 }
