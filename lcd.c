@@ -1,5 +1,5 @@
 #include "lcd.h"
-#include "Tecnica1.h"
+#include "power_stage.h" 
 
 /* esta librería solo puede utilizar las cuatro líneas menos significativas de 
  * un puerto en caso de querer utilizar otras líneas se debe de reprogramar

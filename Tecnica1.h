@@ -17,12 +17,6 @@
 #define GRABAR  1
 #define LEER    0
 
-/*--------------------------control de potencia-------------------------------*/
-#define var_period 200
-#define ON  0x1
-#define OFF 0x0
-/*-------------------------fin del control de potencia------------------------*/
-
 /*Variables globales de las funciones especiales *****************************/
 unsigned char EstadoDeLosBotones;
 
@@ -48,14 +42,9 @@ void pwm_set(unsigned char periodo, unsigned char duty );
 unsigned int obtener_ADC8(void);
 void informar(const char *dato, char longitud);
 void transmitir(unsigned char Dato);
+void EEwrite(unsigned char, unsigned char );
+unsigned char EEread(unsigned char); 
 
-/*--------------------------control de potencia-------------------------------*/
-
-void PWM_porcent(unsigned char);
-void aspiradora (unsigned char);
-void luces (unsigned char);
-
-/*-------------------------fin del control de potencia------------------------*/
 /*sincronismo de diversas funciones                                          */
 void tic_debounce(void);
 void tic_timer1(void);

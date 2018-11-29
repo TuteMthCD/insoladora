@@ -6,7 +6,6 @@
  */
 
 #include "menu.h"
-#include "Tecnica1.h"
 
 // Funciones para el uso de la libreria
 void horaLCD(int, unsigned char);

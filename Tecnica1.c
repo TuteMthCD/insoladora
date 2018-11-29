@@ -94,27 +94,6 @@ void pwm_set(unsigned char periodo, unsigned char duty) {
 
 }
 
-/*--------------------------control de potencia-------------------------------*/
-
-void PWM_porcent(unsigned char porcentaje){
-    unsigned char data;
-    
-    data = (unsigned int)(porcentaje * var_period) / 100;
-    pwm_set(var_period, data);
-}
-
-void aspiradora (unsigned char est_asp){
-    SAL0_ON;
-    if(est_asp)SAL0 = ON;
-    else SAL0 = OFF;
-}
-void luces (unsigned char est_luces){
-    SAL1_ON;
-    if(est_luces)SAL1 = ON;
-    else SAL1 = OFF;
-}
-/*-------------------------fin del control de potencia------------------------*/
-
 /****************************************************************************
  *unsigned char debounce(unsigned char sample)                              *
  *                                                                          *

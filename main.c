@@ -33,6 +33,9 @@ void main(void) {
     //lcd (modificado)
     LCD_init();
     clear_LCD();
+    
+    //ultimo tiempo guardado en la EEPROM
+    varTIME = read_time();
 
     //-------------------------Fin-Inicio---------------------------------------
 

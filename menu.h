@@ -1,5 +1,6 @@
 #include <xc.h>
 #include "EncoderIncremental.h"
+#include "power_stage.h"
 
 void FuntMenu(void);
 

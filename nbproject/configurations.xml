@@ -11,6 +11,7 @@
       <itemPath>EncoderIncremental.h</itemPath>
       <itemPath>teclado.h</itemPath>
       <itemPath>menu.h</itemPath>
+      <itemPath>C:/Users/barre/Desktop/todo/git_hub/insoladora/power_stage.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -26,12 +27,16 @@
       <itemPath>EncoderIncremental.c</itemPath>
       <itemPath>teclado.c</itemPath>
       <itemPath>menu.c</itemPath>
+      <itemPath>C:/Users/barre/Desktop/todo/git_hub/insoladora/power_stage.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>C:\Users\barre\Desktop\todo\git_hub\insoladora</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -42,7 +47,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit2PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>1.42</languageToolchainVersion>
+        <languageToolchainVersion>1.45</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
